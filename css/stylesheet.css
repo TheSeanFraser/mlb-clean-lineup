@@ -1,0 +1,105 @@
+body{
+	background-color: #134a8e;
+	font: 25px Segoe UI;
+	color: white;
+}
+
+
+#heading {
+	text-align: center;
+	font: 30px Segoe UI;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+
+.bo_column {
+	float:left;
+	border-radius: 20px;
+	background-color: #1D2D5C;
+	width: 35%;
+}
+
+.bo_spacer_column {
+	float:left;
+	width: 10%;
+}
+
+.bo_container{
+	margin-left: 15px;
+	margin-bottom: 20px;
+	float:none;
+}
+
+.team_name{
+	font-size: 40px;
+	font-weight: bolder;
+	text-decoration: underline;
+	margin-top: 10px; 
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.bo_player{
+	float:none;
+}
+
+
+.bo_num{
+	float:left;
+	color: #888;
+}
+
+.player_name{
+	float:left;
+	margin-left: 10px;
+}
+
+.player_real_name{
+	float:left;
+	font-weight: bold;
+}
+
+.player_nickname{
+	margin-left: 5px;
+	float:left;
+	font-size: 23px;
+	color:#bbb;
+}
+
+.player_position{
+	margin-left: 10px;
+	float:left;
+	color: #E8291C;
+	font-weight: bold;
+}
+
+.player_phys{
+	float: left;
+	margin-left: 10px;
+	color: #888;
+	font-size: 20px;
+	
+}
+
+.slashline{
+	margin-left: 15px;
+	font-size: 23px;
+	color:#888;
+}
+
+.newLine{
+	clear:both;
+	font-size: 9px;
+}
+
+#sign{
+	color: white;
+    font: 12px Segoe UI;
+	position: absolute;
+    top: 98%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+}
