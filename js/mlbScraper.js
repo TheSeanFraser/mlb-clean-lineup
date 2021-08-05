@@ -65,16 +65,16 @@ $.ajaxSetup({
 	function setBattingOrderIDs(data) {
 			// Store with 'ID' added for convenience
 			homeBattingOrder = ["ID" + data.teams.home.battingOrder[0], "ID" + data.teams.home.battingOrder[1],
-									"ID" + data.teams.home.battingOrder[2], "ID" + data.teams.home.battingOrder[3],
-									"ID" + data.teams.home.battingOrder[4], "ID" + data.teams.home.battingOrder[5],
-									"ID" + data.teams.home.battingOrder[6], "ID" + data.teams.home.battingOrder[7],
-									"ID" + data.teams.home.battingOrder[8]];
+								"ID" + data.teams.home.battingOrder[2], "ID" + data.teams.home.battingOrder[3],
+								"ID" + data.teams.home.battingOrder[4], "ID" + data.teams.home.battingOrder[5],
+								"ID" + data.teams.home.battingOrder[6], "ID" + data.teams.home.battingOrder[7],
+								"ID" + data.teams.home.battingOrder[8]];
 			
 			awayBattingOrder = ["ID" + data.teams.away.battingOrder[0], "ID" + data.teams.away.battingOrder[1],
-									"ID" + data.teams.away.battingOrder[2], "ID" + data.teams.away.battingOrder[3],
-									"ID" + data.teams.away.battingOrder[4], "ID" + data.teams.away.battingOrder[5],
-									"ID" + data.teams.away.battingOrder[6], "ID" + data.teams.away.battingOrder[7],
-									"ID" + data.teams.away.battingOrder[8]];
+								"ID" + data.teams.away.battingOrder[2], "ID" + data.teams.away.battingOrder[3],
+								"ID" + data.teams.away.battingOrder[4], "ID" + data.teams.away.battingOrder[5],
+								"ID" + data.teams.away.battingOrder[6], "ID" + data.teams.away.battingOrder[7],
+								"ID" + data.teams.away.battingOrder[8]];
 	}
 	
 	// Applies the game status to the top of the HTML page
@@ -84,10 +84,12 @@ $.ajaxSetup({
 			let gameTime = new Date(Date.parse(data.dates[0].games[0].gameDate));
 			document.getElementById("heading").innerHTML = data.dates[0].games[0].status.detailedState + " - " + gameTime.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 		}
+		// Otherwise show the score
 		else
 			document.getElementById("heading").innerHTML = data.dates[0].games[0].status.detailedState;
 	}
 	
+	// Applies the team names and records
 	function applyTeamNamesToHTML(data){
 		let homeTeamRecord = 	data.teams.home.team.record.leagueRecord.wins + " - " + 
 								data.teams.home.team.record.leagueRecord.losses;
@@ -185,7 +187,7 @@ $.ajaxSetup({
 		}
 	}
 	
-	// Applies the pitchers to the HTML page
+	// Applies the pitchers to the HTML page, since they have different stats
 	function applyPitchersToHTML(data){
 		// Check to see if pitchers are available
 		if (data.teams.home.pitchers.length != 0){

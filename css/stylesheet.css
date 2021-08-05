@@ -7,23 +7,72 @@ body{
 
 #heading {
 	text-align: center;
-	font: 30px Segoe UI;
+	font: 25px Segoe UI;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
 
 
 .bo_column {
-	float:left;
 	border-radius: 20px;
 	background-color: #1D2D5C;
-	width: 35%;
 }
 
-.bo_spacer_column {
-	float:left;
-	width: 10%;
+#batting_orders{
+  position: relative;
+  overflow: auto;
 }
+
+#batting_order_wrapper {
+  /* width is always 100% and always aligned to bottom */
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  display: table;
+
+}
+
+#home_bo {
+	/* force div to have at least 300px and exclude #right from its width */
+	overflow: hidden;
+	/*  min-width: 300px;*/
+	margin:1%;
+	margin-top: 0;
+	width: 45%;
+	min-width: 300px;
+	height: 850px;
+	display: table-column; 
+	float: left;
+
+}
+
+#away_bo {
+  	/* show on the right; width always set, height equal to #left's height */
+  	float: right;
+	margin:1%;
+	margin-top: 0;
+	width: 45%;
+	height: 850px;
+	display: table-column;
+
+}
+
+@media screen and (max-width: 600px) {
+  #home_bo {
+		float: left;
+		min-width: 95%;
+	  	margin: 1%;
+	 
+  }
+  #away_bo {
+	  	float: left;
+	  	min-width: 95%;
+	  	margin: 1%;
+	
+  }
+}
+
 
 .bo_container{
 	margin-left: 15px;
@@ -32,7 +81,7 @@ body{
 }
 
 .team_name{
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: bolder;
 	text-decoration: underline;
 	margin-top: 10px; 
@@ -96,10 +145,7 @@ body{
 #sign{
 	color: white;
     font: 12px Segoe UI;
-	position: absolute;
-    top: 98%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+	text-align: center;
+	vertical-align: bottom; 
 
 }
