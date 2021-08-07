@@ -123,7 +123,7 @@ $.ajaxSetup({
 				// Grab player page for nickname data
 				// Not necessary, but it is fun to have		
 				var peopleData;
-				$.getJSON("http://statsapi.mlb.com/api/v1/people/" + homeIDs[i], function (data2) {
+				$.getJSON("https://statsapi.mlb.com/api/v1/people/" + homeIDs[i], function (data2) {
 					peopleData = data2;
 				});
 				if(peopleData.people[0].nickName)
@@ -154,7 +154,7 @@ $.ajaxSetup({
 				document.getElementById(AWAY_bo_nickname_ids[i]).innerHTML = "";
 				// Grab player page for nickname data
 				// Not necessary, but it is fun to have
-				$.getJSON("http://statsapi.mlb.com/api/v1/people/" + awayIDs[i], function (data2) {
+				$.getJSON("https://statsapi.mlb.com/api/v1/people/" + awayIDs[i], function (data2) {
 					peopleData = data2;
 					if(data2.people[0].nickName)
 						document.getElementById(AWAY_bo_nickname_ids[i]).innerHTML = "\""+ data2.people[0].nickName + "\"";
@@ -209,7 +209,7 @@ $.ajaxSetup({
 			// Grab player page for nickname data
 			// Not necessary, but it is fun to have
 			var peopleData;
-			$.getJSON("http://statsapi.mlb.com/api/v1/people/" + homeIDs[9], function (data2) {
+			$.getJSON("https://statsapi.mlb.com/api/v1/people/" + homeIDs[9], function (data2) {
 					peopleData = data2;
 					if(data2.people[0].nickName)
 						document.getElementById(HOME_bo_nickname_ids[9]).innerHTML = "\"" + data2.people[0].nickName + "\"";
@@ -234,7 +234,7 @@ $.ajaxSetup({
 			document.getElementById(AWAY_bo_nickname_ids[9]).innerHTML = "";
 			// Grab player page for nickname data
 			// Not necessary, but it is fun to have
-			$.getJSON("http://statsapi.mlb.com/api/v1/people/" + awayIDs[9], function (data2) {
+			$.getJSON("https://statsapi.mlb.com/api/v1/people/" + awayIDs[9], function (data2) {
 				peopleData = data2;
 					if(data2.people[0].nickName)
 						document.getElementById(AWAY_bo_nickname_ids[9]).innerHTML = "\"" + data2.people[0].nickName + "\"";
@@ -265,13 +265,13 @@ $.ajaxSetup({
 	function getMLBData() {
 
 		// Find today's gamePk
-		$.getJSON("http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=141", function (dataGame) {
+		$.getJSON("https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=141", function (dataGame) {
 			gamePk = dataGame.dates[0].games[0].gamePk;
 			applyGameStatusToHTML(dataGame);
 		});
 		
 		// Grab the JSON data from the MLB API and utilize it.
-		$.getJSON("http://statsapi.mlb.com//api/v1/game/" + gamePk + "/boxscore", function (data) {
+		$.getJSON("https://statsapi.mlb.com//api/v1/game/" + gamePk + "/boxscore", function (data) {
 			// Using the data from this request, we then perform the rest of the actions
 			
 			// Sets the current ten players for each team
