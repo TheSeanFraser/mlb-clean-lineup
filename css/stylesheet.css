@@ -1,15 +1,30 @@
+:root {
+	--fontLarge: 2vmax;
+	--fontSizeMedium: 1.3vmax;
+}
+
 body{
 	background-color: #134a8e;
 	font: 25px Segoe UI;
 	color: white;
 }
 
+#top{
 
+		
+}
 #heading {
 	text-align: center;
-	font: 25px Segoe UI;
+	font: var(--fontLarge) Segoe UI;
 	font-weight: bold;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
+}
+
+#venue {
+	text-align: center;
+	font: 20px Segoe UI;
+	margin-bottom: 5px;
+	color: darkgrey;
 }
 
 
@@ -39,9 +54,9 @@ body{
 	/*  min-width: 300px;*/
 	margin:1%;
 	margin-top: 0;
-	width: 45%;
+	width: 48%;
 	min-width: 300px;
-	height: 850px;
+	height: 90%;
 	display: table-column; 
 	float: left;
 
@@ -52,22 +67,26 @@ body{
   	float: right;
 	margin:1%;
 	margin-top: 0;
-	width: 45%;
-	height: 850px;
+	width: 48%;
+	height: 90%;
 	display: table-column;
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
+	:root{
+		--fontLarge: 3vmax;
+		--fontSizeMedium: 1.8vmax;
+	}
   #home_bo {
 		float: left;
-		min-width: 95%;
+		min-width: 98%;
 	  	margin: 1%;
 	 
   }
   #away_bo {
 	  	float: left;
-	  	min-width: 95%;
+	  	min-width: 98%;
 	  	margin: 1%;
 	
   }
@@ -81,7 +100,7 @@ body{
 }
 
 .team_name{
-	font-size: 30px;
+	font-size: var(--fontLarge);
 	font-weight: bolder;
 	text-decoration: underline;
 	margin-top: 10px; 
@@ -91,6 +110,7 @@ body{
 
 .bo_player{
 	float:none;
+	font-size: var(--fontSizeMedium);
 }
 
 
@@ -112,7 +132,7 @@ body{
 .player_nickname{
 	margin-left: 5px;
 	float:left;
-	font-size: 23px;
+	font-size: var(--fontSizeMedium);
 	color:#bbb;
 }
 
@@ -127,19 +147,19 @@ body{
 	float: left;
 	margin-left: 10px;
 	color: #888;
-	font-size: 20px;
+	font-size: var(--fontSizeMedium);
 	
 }
 
 .slashline{
 	margin-left: 15px;
-	font-size: 23px;
+	font-size: var(--fontSizeMedium);
 	color:#888;
 }
 
 .newLine{
 	clear:both;
-	font-size: 9px;
+	font-size: 0.5vmin;
 }
 
 #sign{

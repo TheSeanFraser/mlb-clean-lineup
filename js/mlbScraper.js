@@ -79,6 +79,7 @@ $.ajaxSetup({
 	
 	// Applies the game status to the top of the HTML page
 	function applyGameStatusToHTML(data){
+		console.log(data);
 		// If the game hasn't started yet, add the start time
 		if(data.dates[0].games[0].status.detailedState == "Scheduled"){
 			let gameTime = new Date(Date.parse(data.dates[0].games[0].gameDate));
@@ -86,7 +87,12 @@ $.ajaxSetup({
 		}
 		// Otherwise show the score
 		else
-			document.getElementById("heading").innerHTML = data.dates[0].games[0].status.detailedState;
+			var scoreString = data.dates[0].games[0].teams.home.team.name + " " 
+							+ data.dates[0].games[0].teams.home.score + " - " 
+							+ data.dates[0].games[0].teams.away.score + " "
+							+ data.dates[0].games[0].teams.away.team.name;
+			document.getElementById("heading").innerHTML = scoreString;
+			document.getElementById("venue").innerHTML =  data.dates[0].games[0].venue.name;
 	}
 	
 	// Applies the team names and records
@@ -284,3 +290,6 @@ $.ajaxSetup({
 	getMLBData();
 	
 }());
+
+// All current games?
+// https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1
