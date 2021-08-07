@@ -1,6 +1,7 @@
 /*jslint browser: true, devel: true*/
 /*eslint-env browser*/
 /*global $, jQuery, alert*/
+
 // Set the global configs to synchronous 
 $.ajaxSetup({
     async: false
