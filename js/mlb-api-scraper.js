@@ -99,6 +99,7 @@ function getMLBdata(gamePk = null){
 			applyPitchers(data);
 		});
 	}
+	// Returns the current gamePk for passing by value
 	return curGamePk;
 }
 
@@ -317,8 +318,11 @@ function applyPitchers(data){
 }
 
 
+// Get the data
+// Must assign value because Javascript passes by value, not reference
 gamePk = getMLBdata();
 
+// Run the function every 30 seconds to update the data
 const interval = setInterval(function() {
 	gamePk = getMLBdata(gamePk);
  }, 30000);
