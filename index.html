@@ -12,7 +12,7 @@
 		</script>
     	<meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
-    	<title>Blue Jays Game</title>
+    	<title>MLB Clean Lineup</title>
     	<link rel="stylesheet" href="css/stylesheet.css">
 	</head>
 
@@ -20,12 +20,17 @@
 		<div id="top">
 			<div id="heading">Status</div>
 			<div id="venue"></div>
+			<div class="dropdown">
+				<button onclick="gameDropdownHandler()" class="dropbtn">Select Game ▼</button>
+				<div id="game-dropdown" class="dropdown-content">
+				</div>
+			</div>
 		</div>
 		<div id="batting_orders">
 			
 			<!-- Wrapper for batting orders	-->
 			<div id="batting_order_wrapper">
-				<!-- Blue Jays Batting Order -->
+				<!-- Home Team Batting Order -->
 				<div id="home_bo" class="bo_column">
 					<div id="home_team" class="team_name">Home</div>
 					<!-- Container for 1-9 Batting Order -->
@@ -187,7 +192,7 @@
 						<div class="bo_num">2</div>
 						<div id="away_bo2_name" class="player_name">
 							<div id="away_bo2_real_name" class="player_real_name">Second</div>
-							<div id="away_bo2_nickname" class="player_nickname">Billiam</div>
+							<div id="away_bo2_nickname" class="player_nickname">Batter</div>
 							<div id="away_bo2_position" class="player_position">1B</div>
 						</div>
 						<div class="newLine"></div>
@@ -301,13 +306,16 @@
 			</div>
 			</div>
 		</div>
-			<!-- Custom Scripts -->
-<!--		<script src="js/jquery.min.js"></script>-->
-			<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-			<script src="js/mlbScraper.js"></script>
+		<!-- Custom Scripts -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="js/mlb-api-scraper.js"></script>
+		<script src="js/game-dropdown-handler.js"></script>
 	</body>
 	
-	<footer id="sign">Sean Fraser 2021</footer>
+	<footer id="sign">
+		<div>Sean Fraser 2021</div>
+		<div>Data provided by MLB API</div>  
+	</footer>
 	
 
 </html>
